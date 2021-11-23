@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  background-color: #fef9ef;
+}
+
+.card {
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 6px;
+  background: #393e46;
+  color: #eeeeee;
+  .card-header {
+    padding: 1rem 0;
+    border-radius: inherit;
+    background: #222831;
+
+    h3 {
+      font-size: 3rem;
+      font-family: "Secular One", sans-serif;
+      color: #00adb5;
+      text-transform: uppercase;
+    }
+  }
+
+  .card-body {
+    margin: 20px auto;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.btn {
+  width: 60%;
+  padding: 0.8rem 0.5rem;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 15px 0;
+  background: #00adb5;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.alert-danger {
+  padding: 10px 5px;
+  background: #ffb085;
+  color: #8e0505;
+  border: 2px solid #ff7777;
+  font-size: 1.05rem;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0;
+}

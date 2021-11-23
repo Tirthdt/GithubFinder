@@ -1,0 +1,12 @@
+.hist {
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px 5px;
+  border-bottom: 2px solid #111;
+  cursor: pointer;
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

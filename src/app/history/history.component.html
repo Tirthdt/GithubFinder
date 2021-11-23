@@ -1,0 +1,9 @@
+<button class="btn" (click)="clearHistory()">Clear History</button>
+
+<div
+  class="hist"
+  *ngFor="let hist of historyData"
+  [routerLink]="['/search', hist]"
+>
+  <p>{{ hist }}<i class="fas fa-angle-double-right"></i></p>
+</div>

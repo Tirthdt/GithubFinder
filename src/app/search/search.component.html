@@ -1,0 +1,55 @@
+<div class="input-container" *ngIf="!name">
+  <input type="text" placeholder="Enter User Name" #nameString />
+  <button class="btn" (click)="searchUser()">Search</button>
+</div>
+
+<button *ngIf="name !== ''" class="btn" [routerLink]="['/search']">
+  Back to Search
+</button>
+<button *ngIf="name !== ''" class="btn" [routerLink]="['/history']">
+  Back to History
+</button>
+
+<div *ngIf="user$ | async; let user">
+  <div class="card" *ngIf="user.userInfo">
+    <div class="card-header d-flex">
+      <a [href]="user.userInfo.html_url" target="_blank">
+        {{ user.userInfo.login }}
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    <div class="card-body">
+      <div class="img-container">
+        <img [src]="user.userInfo.avatar_url" alt="photo_image" />
+      </div>
+      <div class="info">
+        <p>
+          <i class="fas fa-location-arrow"></i> {{ user.userInfo.location }}
+        </p>
+        <p *ngIf="user.userInfo.blog">
+          <a [href]="user.userInfo.blog" target="_blank"> Porfolio </a>
+        </p>
+      </div>
+      <div class="repo-info">
+        <div class="round" style="background: #c36839">
+          Repos: {{ user.userInfo.public_repos }}
+        </div>
+        <div class="round" style="background: #630000">
+          Gists: {{ user.userInfo.public_gists }}
+        </div>
+        <div class="round" style="background: #f0a500">
+          Followers: {{ user.userInfo.followers }}
+        </div>
+        <div class="round" style="background: #150050">
+          Following: {{ user.userInfo.following }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lds-ring" *ngIf="user.loading">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
